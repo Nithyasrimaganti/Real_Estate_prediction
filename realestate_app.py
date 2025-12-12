@@ -62,8 +62,8 @@ def feature_engineer(df_raw):
         df["Public_Transport_Accessibility"] = df["Public_Transport_Accessibility"].map({"Low":1,"Medium":2,"High":3})
 
     # Yes/No -> 1/0
-    df = df.replace({"Yes": 1, "No": 0}).infer_objects()
-
+    df.replace({"Yes": 1, "No": 0}, inplace=True)
+    df = df.infer_objects(copy=False)
 
     # Map age category to int
     age_mapping = {"0-5 yrs":1,"5-10 yrs":2,"10-20 yrs":3,"20-50 yrs":4,"50+ yrs":5}
