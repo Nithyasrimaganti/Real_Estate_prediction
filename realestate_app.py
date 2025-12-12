@@ -10,6 +10,8 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_a
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import joblib
 import io
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 st.set_page_config(page_title="Real Estate Prediction App", layout="wide")
 
